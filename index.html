@@ -13,9 +13,119 @@
     <title>Jenna's Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Weather App</h1>
-      <a href class="btn btn-primary">"#">Click Me</a>
+<div class="container">
+  <div class="weather-app">
+    <form id="search-form">
+      <div class="row">
+        <div class="col-2">
+          <img src="images/world_connection_.png" alt="" class="corner-icon" />
+        </div>
+        <div class="col-6">
+          <input type="search" placeholder="Search for location" class="form-control" autofocus="on"
+            id="search-text-input" />
+        </div>
+        <div class="col-3">
+          <input type="submit" value="Search" class="form-control btn btn-primary" />
+        </div>
+      </div>
+    </form>
+    <div class="section">
+      <h1>Toronto</h1>
+      <ul class="today-info">
+        <li class="current" id="moment">Thursday</li>
+        <li id="right-now">Risk of a Thunderstorm</li>
+        <li id="feel-like">Feels like 32°C</li>
+      </ul>
+    </div>
+    <div class="row-container">
+      <div class="row">
+        <div class="col-6">
+          <div class="clearfix">
+            <img src="images/climate.png" alt="Storm icon" class="today-icon float-left" />
+            <div class="float-left">
+              <span class="today-temp" id="temperature">30</span>
+              <span class="units"><a href="#" class="seeCelcius" id="changec"> °C</a> |
+                <a href="#" class="seeFarenheight" id="changef">
+                  °F</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <ul class="specific-info">
+            <li>Humidity:<span id="humidity"> 74</span>%</li>
+            <li>Wind:<span id="wind">23</span>km/h</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="sixday-forcast">
+      <div class="row">
+        <div class="col-2">
+          <ul>
+            <li>Sunday</li>
+            <li>
+              <img src="images/cloudy.png" alt="" class="Sunday" />
+            </li>
+            <li>24°C</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <li>Monday</li>
+            <li>
+              <img src="images/climate.png" alt="" class="Monday" />
+            </li>
+
+            <li>23°C</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <li>Tuesday</li>
+            <li>
+              <img src="images/sun.png" alt="" class="Tuesday" />
+            </li>
+            <li>28°C</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <li>Wednesday</li>
+            <li>
+              <img src="images/thunder.png" alt="" class="Wednesday" />
+            </li>
+            <li>27°C</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <li>Thursday</li>
+            <li>
+              <img src="images/climate.png" alt="" class="Thursday" />
+            </li>
+            <li>28°C</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <li>Friday</li>
+            <li>
+              <img src="images/sun.png" alt="" class="Friday" />
+            </li>
+            <li>31°C</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="signature">
+    <h3>
+      <a href="https://github.com/jfwithrow/JJ-Weatherapp-Part-1">Open-source code</a>
+      <span class="myname">by Jenna Withrow</span>
+    </h3>
+  </div>
+</div>
       <script src="src/app.js"></script>
     </div>
   </body>
