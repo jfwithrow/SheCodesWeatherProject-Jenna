@@ -1,3 +1,142 @@
+.corner-icon {
+  width: 150px;
+  margin: 0;
+  padding-right: 50px;
+}
+.btn-primary {
+  padding: 5px 30px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
+  border-radius: 1px solid #4a4e69 !important;
+  background-color: #4a4e69 !important;
+  transition: all 200ms ease !important;
+}
+.btn-primary:hover {
+  background-color: #c9ada7 !important;
+  border-color: #c9ada7 !important;
+}
 h1 {
-  color: blue;
+  color: #4a4e69;
+  font-family: "Baloo Chettan 2", cursive;
+  font-weight: 500 !important;
+  font-size: 60px !important;
+  line-height: 50px !important;
+  text-align: left;
+  margin: 0 !important;
+}
+.today-info {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 10px;
+  color: #22223b;
+  list-style: none;
+}
+.today-icon {
+  width: 85px;
+  margin-right: 10px;
+}
+.specific-info {
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #977580;
+  font-style: normal;
+}
+ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+.weather-app {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 690px;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.today-temp {
+  font-family: "Baloo Chettan 2", cursive;
+  font-size: 100px;
+  color: #22223b;
+  font-style: normal;
+  line-height: 1;
+}
+.units {
+  color: #a6808c;
+  position: relative;
+  top: -46px;
+}
+.units a {
+  color: #a6808c;
+  text-decoration: none !important;
+}
+.row-container {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.section {
+  margin-left: 80px;
+}
+hr {
+  height: 1px;
+  background-color: #9a8c989a;
+  border: none;
+  width: 500px;
+}
+.Sunday {
+  width: 45px;
+}
+.Monday {
+  width: 45px;
+}
+.Tuesday {
+  width: 45px;
+}
+.Wednesday {
+  width: 45px;
+}
+.Thursday {
+  width: 45px;
+}
+.Friday {
+  width: 45px;
+}
+.col-2 ul {
+  list-style: none;
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16px;
+  color: #22223b;
+}
+.col-2 li {
+  text-align: center;
+  margin: 10px;
+}
+.signature h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 2px;
+  position: absolute;
+  left: 560px;
+}
+
+.signature a {
+  text-decoration: none !important;
+  color: #977580;
+}
+
+.myname {
+  color: #22223b;
 }
