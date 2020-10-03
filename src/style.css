@@ -66,6 +66,7 @@ ul {
     #ece9e6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .today-temp {
   font-family: "Baloo Chettan 2", cursive;
   font-size: 100px;
@@ -124,19 +125,21 @@ hr {
   text-align: center;
   margin: 10px;
 }
+
+small {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
 .signature h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   line-height: 2px;
-  position: absolute;
-  left: 560px;
 }
-
 .signature a {
   text-decoration: none !important;
   color: #977580;
 }
-
 .myname {
   color: #22223b;
 }
