@@ -54,6 +54,7 @@ ul {
   padding: 15px;
   margin: 20px auto;
   max-width: 690px;
+
   background: #ece9e6; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
