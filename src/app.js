@@ -2,6 +2,14 @@
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
+  let nowHour = date.getHours();
+  if (nowHour < 10) {
+    nowHour = `0${nowHour}`;
+  }
+  let nowMinutes = date.getMinutes();
+  if (nowMinutes < 10) {
+    nowMinutes = `0${nowMinutes}`;
+  }
 
   let days = [
     "Sunday",
@@ -14,8 +22,6 @@ function formatDate(timestamp) {
   ];
 
   let nowDay = days[date.getDay()];
-  let nowHour = date.getHours();
-  let nowMinutes = date.getMinutes();
   return `${nowDay} ${nowHour}:${nowMinutes}`;
 }
 //City
