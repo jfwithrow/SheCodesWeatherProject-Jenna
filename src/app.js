@@ -31,18 +31,23 @@ function displayWeatherCondition(response) {
   let humidtyElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let momentElement = document.querySelector("#moment");
+  let iconElement = document.querySelector("#icon");
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidtyElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   momentElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   document.querySelector("#right-now").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#feel-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  console.log(response.data);
 }
 
 function search(event) {
