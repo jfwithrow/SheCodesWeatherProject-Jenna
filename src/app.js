@@ -1,33 +1,36 @@
 //Current Date
-let date = new Date();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
-let nowDay = days[date.getDay()];
-let nowHour = date.getHours();
-let nowMinutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-let moment = document.getElementById("moment");
-moment.innerHTML = `${nowDay} ${nowHour}: ${nowMinutes}`;
-
+  let nowDay = days[date.getDay()];
+  let nowHour = date.getHours();
+  let nowMinutes = date.getMinutes();
+  return `${nowDay} ${nowHour}:${nowMinutes}`;
+}
 //City
 function displayWeatherCondition(response) {
-  document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  let cityElement = document.querySelector("h1");
+  let temperatureElement = document.querySelector("#temperature");
+  let humidtyElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let momentElement = document.querySelector("#moment");
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  humidtyElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  momentElement.innerHTML = formatDate(response.data.dt * 1000);
+
   document.querySelector("#right-now").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#feel-like").innerHTML = Math.round(
