@@ -2,14 +2,6 @@
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let nowHour = date.getHours();
-  if (nowHour < 10) {
-    nowHour = `0${nowHour}`;
-  }
-  let nowMinutes = date.getMinutes();
-  if (nowMinutes < 10) {
-    nowMinutes = `0${nowMinutes}`;
-  }
 
   let days = [
     "Sunday",
@@ -22,9 +14,22 @@ function formatDate(timestamp) {
   ];
 
   let nowDay = days[date.getDay()];
-  return `${nowDay} ${nowHour}:${nowMinutes}`;
+  return `${nowDay} ${formatHours(timestamp)}`;
 }
 //City
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let nowHour = date.getHours();
+  if (nowHour < 10) {
+    nowHour = `0${nowHour}`;
+  }
+  let nowMinutes = date.getMinutes();
+  if (nowMinutes < 10) {
+    nowMinutes = `0${nowMinutes}`;
+  }
+  return `${nowHour}:${nowMinutes}`;
+}
 function displayWeatherCondition(response) {
   let cityElement = document.querySelector("h1");
   let temperatureElement = document.querySelector("#temperature");
@@ -49,12 +54,38 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += ` 
+    
+    <div class="col-2">
+                <h3>${formatHours(forecast.dt * 1000)}</h3>
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecast.weather[0].icon
+                  }@2x.png" alt="" class="Sunday" />
+                <div class="weather-forecast-temperature">
+              <strong>${Math.round(
+                forecast.main.temp_max
+              )}°</strong> <span>${Math.round(forecast.main.temp_min)}°</span>
+    </div>
+            </div>
+            `;
+  }
+}
+
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#search-text-input").value;
   let apiKey = "ded3e7c16686147e3f17fde35f693c3f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //Celcius and Farenheight Change

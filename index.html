@@ -32,6 +32,7 @@
                 class="form-control"
                 autofocus="on"
                 id="search-text-input"
+                autocomplete="off"
               />
             </div>
             <div class="col-3">
@@ -81,73 +82,12 @@
           </div>
         </div>
         <hr />
-        <div class="sixday-forcast">
-          <div class="row">
-            <div class="col-2">
-              <ul>
-                <li>Sunday</li>
-                <li>
-                  <img src="images/cloudy.png" alt="" class="Sunday" />
-                </li>
-                <li class="highTemp sun"></li><strong>24°</strong> <span>17°</span></li>
-              </ul>
-            </div>
-            <div class="col-2">
-              <ul>
-                <li>Monday</li>
-                <li>
-                  <img src="images/climate.png" alt="" class="Monday" />
-                </li>
-
-                <li class="highTemp mon">
-                  <strong>28°</strong> <span>17°</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-2">
-              <ul>
-                <li>Tuesday</li>
-                <li>
-                  <img src="images/sun.png" alt="" class="Tuesday" />
-                </li>
-                <li class="highTemp tues">
-                  <strong>28°</strong>
-                  <span>17°</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-2">
-              <ul>
-                <li>Wednesday</li>
-                <li>
-                  <img src="images/thunder.png" alt="" class="Wednesday" />
-                </li>
-                <li class="highTemp wed">
-                  <strong>27°</strong>  <span>17°</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-2">
-              <ul>
-                <li>Thursday</li>
-                <li>
-                  <img src="images/climate.png" alt="" class="Thursday" />
-                </li>
-                <li class="highTemp thurs">
-                 <strong>28°</strong>  <span>17°</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-2">
-              <ul>
-                <li>Friday</li>
-                <li>
-                  <img src="images/sun.png" alt="" class="Friday" />
-                </li>
-                <li class="highTemp fri">
-                <strong>31°</strong>   <span>17°</span>
-                </li>
-              </ul>
+        <div class="sixday-forcast" id="forecast">
+          <div class="col-2">
+            <h3>12:00</h3>
+            <img src="images/cloudy.png" alt="" class="Sunday" />
+            <div class="weather-forecast-temperature">
+              <strong>16°</strong> <span>15°</span>
             </div>
           </div>
         </div>

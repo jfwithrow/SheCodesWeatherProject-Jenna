@@ -35,9 +35,11 @@ h1 {
   text-transform: capitalize;
 }
 .today-icon {
-  width: 85px;
-  margin-right: 10px;
+  width: 80px;
+  margin-left: 10px;
+  font-size: 80px;
 }
+
 .specific-info {
   list-style: none;
   font-family: "Montserrat", sans-serif;
@@ -123,16 +125,14 @@ hr {
 .Friday {
   width: 45px;
 }
-.col-2 ul {
-  list-style: none;
-  margin: 0;
+.col-2 h3 {
   font-family: "Montserrat", sans-serif !important;
-  font-size: 16px;
+  font-size: 18px;
   color: #22223b;
 }
-.col-2 li {
-  text-align: center;
-  margin: 10px;
+
+.col-2 {
+  margin-left: 5px;
 }
 
 small {
