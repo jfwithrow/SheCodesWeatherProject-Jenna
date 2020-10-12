@@ -32,8 +32,10 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector("#wind");
   let momentElement = document.querySelector("#moment");
   let iconElement = document.querySelector("#icon");
+
+  celciusTemperature = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
   humidtyElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   momentElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -45,9 +47,6 @@ function displayWeatherCondition(response) {
 
   document.querySelector("#right-now").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#feel-like").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
 }
 
 function search(event) {
@@ -58,24 +57,31 @@ function search(event) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
-
 //Celcius and Farenheight Change
 function seeFarenheight(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 86;
+  let farenheightTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheightTemperature);
+  celciusLink.classList.remove("active");
+  farenheightLink.classList.add("active");
 }
-
-let farenheightLink = document.querySelector("#changef");
-farenheightLink.addEventListener("click", seeFarenheight);
 
 function seeCelcius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 30;
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  celciusLink.classList.add("active");
+  farenheightLink.classList.remove("active");
 }
+
+let celciusTemperature = null;
+
+let farenheightLink = document.querySelector("#changef");
+farenheightLink.addEventListener("click", seeFarenheight);
 
 let celciusLink = document.querySelector("#changec");
 celciusLink.addEventListener("click", seeCelcius);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);

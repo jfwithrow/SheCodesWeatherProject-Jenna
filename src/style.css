@@ -85,6 +85,13 @@ ul {
   color: #a6808c;
   text-decoration: none !important;
 }
+.float-left .active {
+  color: #22223b;
+  cursor: default;
+}
+.float-left .active:hover {
+  text-decoration: none;
+}
 .row-container {
   margin-top: 30px;
   margin-left: 100px;
