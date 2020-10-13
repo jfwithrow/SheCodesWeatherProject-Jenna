@@ -77,15 +77,19 @@ function displayForecast(response) {
   }
 }
 
-function search(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
+function search(city) {
   let apiKey = "ded3e7c16686147e3f17fde35f693c3f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-text-input");
+  search(cityInputElement.value);
 }
 
 //Celcius and Farenheight Change
@@ -115,4 +119,6 @@ let celciusLink = document.querySelector("#changec");
 celciusLink.addEventListener("click", seeCelcius);
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
+
+search("Toronto");

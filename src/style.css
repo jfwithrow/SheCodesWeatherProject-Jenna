@@ -57,18 +57,13 @@ ul {
   padding: 15px;
   margin: 20px auto;
   max-width: 690px;
-
-  background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ece9e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #c9ccd3;
+  background-image: linear-gradient(
+    -9000deg,
+    rgba(255, 255, 255, 0.5) 15%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  background-blend-mode: lighten;
 }
 
 .today-temp {
