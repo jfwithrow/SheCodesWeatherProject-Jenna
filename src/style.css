@@ -131,8 +131,13 @@ hr {
   color: #22223b;
 }
 
-.col-2 {
-  margin-left: 5px;
+.sixday-forcast .col-2 {
+  margin: 5px 5px;
+  text-align: center;
+}
+
+.sixday-forcast {
+  width: 760px;
 }
 
 small {

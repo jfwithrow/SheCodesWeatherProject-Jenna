@@ -56,12 +56,12 @@ function displayWeatherCondition(response) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += ` 
-    
     <div class="col-2">
                 <h3>${formatHours(forecast.dt * 1000)}</h3>
                   <img src="http://openweathermap.org/img/wn/${
